@@ -16,24 +16,35 @@ using System.Threading.Tasks;
 
 namespace HTTP_LISTENER
 {
-    class Program
+    public class MySerializableClass
+    {
+   
+      public  string CustomerID;
+   
+        public string CompanyName;
+
+        public string ContactName;
+
+        public string ContactTitle;
+
+        public string Address;
+ 
+        public string City;
+
+        public string PostalCode;
+   
+        public string Country;
+   
+        public string Phone;
+      
+        public string Fax;
+
+    }
+    public static class Program
     {
         // This is the class that will be deserialized.
        
-        public class MySerializableClass
-        {
-            string CustomerID;
-            string CompanyName;
-            string ContactName;
-            string ContactTitle;
-            string Address;
-            string City;
-            string PostalCode;
-            string Country;
-            string Phone;
-            string Fax;
 
-        }
         public static void PrintKeysAndValues(NameValueCollection myCol)
         {
             Console.WriteLine("   KEY        VALUE");
@@ -58,6 +69,16 @@ namespace HTTP_LISTENER
                 //   Console.WriteLine();
             }
             return -1;
+        }
+
+                public static Stream ToStream(this string str)
+        {
+            MemoryStream stream = new MemoryStream();
+            StreamWriter writer = new StreamWriter(stream);
+            writer.Write(str);
+            writer.Flush();
+            stream.Position = 0;
+            return stream;
         }
 
 
@@ -123,18 +144,46 @@ namespace HTTP_LISTENER
                         {
                             Console.WriteLine("xml id = {0}", a);
 
+                            request.QueryString.Get(a);
+
+
+                            // Declare an object variable of the type to be deserialized.
+                            XmlRootAttribute xRoot = new XmlRootAttribute();
+                            xRoot.ElementName = "Customer";
+                            // xRoot.Namespace = "http://www.cpandl.com";
+                            xRoot.IsNullable = true;
 
                             MySerializableClass myObject = new MySerializableClass();
                             // Insert code to set properties and fields of the object.  
                             XmlSerializer mySerializer = new
-                            XmlSerializer(typeof(MySerializableClass));
+                            XmlSerializer(typeof(MySerializableClass), xRoot);
                             // To write to a file, create a StreamWriter object.  
-                            StreamWriter myWriter = new StreamWriter("myFileName.xml");
-                            mySerializer.Serialize(myWriter, myObject);
-                            myWriter.Close();
+                            //                StreamWriter myWriter = new StreamWriter("myFileName.xml");
+                            //  mySerializer.Serialize(request.QueryString.Get(a), myObject);
+
+                            Stream mystream = ToStream(request.QueryString.Get(a));
+                            myObject = (MySerializableClass)mySerializer.Deserialize(mystream);
+                                 //               myWriter.Close();
 
 
-                        }
+                            Console.Write(
+                                myObject.CustomerID + "\t");
+                                                     //   }
+                        /**/
+
+                        /*MySerializableClass myObject;
+                        // Construct an instance of the XmlSerializer with the type  
+                        // of object that is being deserialized.  
+                        XmlSerializer mySerializer =
+                        new XmlSerializer(typeof(MySerializableClass));
+                        // To read the file, create a FileStream.  
+                        FileStream myFileStream =
+                        new FileStream("myFileName.xml", FileMode.Open);
+                        // Call the Deserialize method and cast to the object type.  
+                        myObject = (MySerializableClass)
+                        mySerializer.Deserialize(myFileStream);
+                        */
+                    }
 
 
 

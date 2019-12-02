@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MySerializableClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <UnitPrice xmlns="http://www.cohowinery.com">0</UnitPrice>
+  <Quantity xmlns="http://www.cpandl.com">0</Quantity>
+  <LineTotal xmlns="http://www.cohowinery.com">0</LineTotal>
+</MySerializableClass>
