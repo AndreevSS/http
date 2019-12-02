@@ -1,0 +1,11 @@
+C:\Users\student\source\repos\HTTP_LISTENER\HTTP_LISTENER\bin\Debug\netcoreapp3.0\HTTP_LISTENER.exe
+C:\Users\student\source\repos\HTTP_LISTENER\HTTP_LISTENER\bin\Debug\netcoreapp3.0\HTTP_LISTENER.deps.json
+C:\Users\student\source\repos\HTTP_LISTENER\HTTP_LISTENER\bin\Debug\netcoreapp3.0\HTTP_LISTENER.runtimeconfig.json
+C:\Users\student\source\repos\HTTP_LISTENER\HTTP_LISTENER\bin\Debug\netcoreapp3.0\HTTP_LISTENER.runtimeconfig.dev.json
+C:\Users\student\source\repos\HTTP_LISTENER\HTTP_LISTENER\bin\Debug\netcoreapp3.0\HTTP_LISTENER.dll
+C:\Users\student\source\repos\HTTP_LISTENER\HTTP_LISTENER\bin\Debug\netcoreapp3.0\HTTP_LISTENER.pdb
+C:\Users\student\source\repos\HTTP_LISTENER\HTTP_LISTENER\obj\Debug\netcoreapp3.0\HTTP_LISTENER.csprojAssemblyReference.cache
+C:\Users\student\source\repos\HTTP_LISTENER\HTTP_LISTENER\obj\Debug\netcoreapp3.0\HTTP_LISTENER.AssemblyInfoInputs.cache
+C:\Users\student\source\repos\HTTP_LISTENER\HTTP_LISTENER\obj\Debug\netcoreapp3.0\HTTP_LISTENER.AssemblyInfo.cs
+C:\Users\student\source\repos\HTTP_LISTENER\HTTP_LISTENER\obj\Debug\netcoreapp3.0\HTTP_LISTENER.dll
+C:\Users\student\source\repos\HTTP_LISTENER\HTTP_LISTENER\obj\Debug\netcoreapp3.0\HTTP_LISTENER.pdb

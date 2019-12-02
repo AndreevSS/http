@@ -1,0 +1,25 @@
+Альтернативная IDE для JMeter от Владимира&nbsp;Ситникова</a></h1></header>			<div class="featured-media">
+				<img width="1072" height="425" src="https://loadtestweb.files.wordpress.com/2019/06/0ngw6rskm9.gif?w=1072" class="attachment-baskerville-2-post-image size-baskerville-2-post-image wp-post-image" alt="" data-attachment-id="1564" data-permalink="https://loadtestweb.info/2019/06/29/%d0%b0%d0%bb%d1%8c%d1%82%d0%b5%d1%80%d0%bd%d0%b0%d1%82%d0%b8%d0%b2%d0%bd%d0%b0%d1%8f-ide-%d0%b4%d0%bb%d1%8f-jmeter/0ngw6rskm9/" data-orig-file="https://loadtestweb.files.wordpress.com/2019/06/0ngw6rskm9.gif" data-orig-size="1072,425" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="0ngw6rskm9" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2019/06/0ngw6rskm9.gif?w=300" data-large-file="https://loadtestweb.files.wordpress.com/2019/06/0ngw6rskm9.gif?w=736" />			</div> <!-- /featured-media -->
+					<div class="post-content clear">
+				
+<blockquote class="wp-block-quote"><p>Привет, привет. Тут JMeter кто-нибудь использует?</p><p> Я как-то, забавы ради, пробовал делать альтернативную IDE для JMeter&#8217;а: <a href="http://recordit.co/0ngw6RSkm9">http://recordit.co/0ngw6RSkm9</a></p><p> И у меня вопросик: норм тема? Или текущий UI хорош?</p><cite>Vladimir Sitnikov, @vladimirsitnikv</cite></blockquote>
+
+
+
+<figure class="wp-block-image"><img data-attachment-id="1565" data-permalink="https://loadtestweb.info/d0b8d0b7d0bed0b1d180d0b0d0b6d0b5d0bdd0b8d0b5/" data-orig-file="https://loadtestweb.files.wordpress.com/2019/06/d0b8d0b7d0bed0b1d180d0b0d0b6d0b5d0bdd0b8d0b5.png" data-orig-size="437,357" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="d0b8d0b7d0bed0b1d180d0b0d0b6d0b5d0bdd0b8d0b5" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2019/06/d0b8d0b7d0bed0b1d180d0b0d0b6d0b5d0bdd0b8d0b5.png?w=300" data-large-file="https://loadtestweb.files.wordpress.com/2019/06/d0b8d0b7d0bed0b1d180d0b0d0b6d0b5d0bdd0b8d0b5.png?w=437" src="https://loadtestweb.files.wordpress.com/2019/06/d0b8d0b7d0bed0b1d180d0b0d0b6d0b5d0bdd0b8d0b5.png" alt="" class="wp-image-1565" /></figure>
+
+
+
+<p>В чем его преимущество? Какие проблемы данное ide решает? Какие то киллерфичи?:</p>
+
+
+
+<ul><li>Например: автодополнение, рефакторинги, breakpoint&#8217;ы</li><li>Сейчас в jmeter опечатаешься в имени переменной и никогда не поймёшь.</li></ul>
+
+
+
+<p>Попробовать использовать где-то можно взять? Или все в процессе пока?:</p>
+
+
+
+<ul><li>Это прототип был. Я тогда так и не понял нужно оно или нет</li></ul>
