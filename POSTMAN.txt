@@ -1,4 +1,4 @@
-﻿http://localhost:8888/connection?name=123&name2=412&xml=<?xml version="1.0" encoding="UTF-8"?>
+﻿http://localhost:8888/connection/CustomerName/?name=123&name2=412&xml=<?xml version="1.0" encoding="UTF-8"?>
 <Customer>
     <CustomerID>ALFKI</CustomerID>
     <CompanyName>Alfreds Futterkiste</CompanyName>

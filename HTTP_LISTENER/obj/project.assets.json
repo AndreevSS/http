@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\student\\source\\repos\\HTTP_LISTENER\\HTTP_LISTENER\\HTTP_LISTENER.csproj",
+      "projectUniqueName": "C:\\Users\\student\\Desktop\\Новая папка (2)\\Andreev123\\http\\HTTP_LISTENER\\HTTP\\HTTP_LISTENER\\HTTP_LISTENER.csproj",
       "projectName": "HTTP_LISTENER",
-      "projectPath": "C:\\Users\\student\\source\\repos\\HTTP_LISTENER\\HTTP_LISTENER\\HTTP_LISTENER.csproj",
+      "projectPath": "C:\\Users\\student\\Desktop\\Новая папка (2)\\Andreev123\\http\\HTTP_LISTENER\\HTTP\\HTTP_LISTENER\\HTTP_LISTENER.csproj",
       "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\student\\source\\repos\\HTTP_LISTENER\\HTTP_LISTENER\\obj\\",
+      "outputPath": "C:\\Users\\student\\Desktop\\Новая папка (2)\\Andreev123\\http\\HTTP_LISTENER\\HTTP\\HTTP_LISTENER\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
