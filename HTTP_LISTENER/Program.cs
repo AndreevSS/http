@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
+using System.Threading;
 
 //using static System.Convert;
 
@@ -30,10 +31,115 @@ namespace HTTP_LISTENER
         public string Fax;
 
     }
+
+ 
     public static class Program
     {
         // This is the class that will be deserialized.
-       
+
+        public class ListenerObject
+        {
+            public static void CreateListener(int port)
+            {
+
+                if (!HttpListener.IsSupported)
+                {
+                    Console.WriteLine("Windows XP SP2 or Server 2003 is required to use the HttpListener class.");
+                    return;
+                }
+
+
+                HttpListener listener = new HttpListener();
+                listener.Prefixes.Add("http://localhost:" + port + "/connection/");
+                listener.Start();
+                Console.WriteLine(port + ": Ожидание подключений...");
+
+                //      HttpListenerRequest request = context.Request;
+                //      HttpListenerResponse response = context.Response;
+
+                while (true)
+                {
+                    // метод GetContext блокирует текущий поток, ожидая получение запроса 
+                    HttpListenerContext context = listener.GetContext();
+                    ConnectionInfo(context.Request);
+
+                    switch (Path(context.Request.RawUrl))
+                    {
+                        default: StringFromXML(context, "CustomerID"); break;
+                        case "/connection/CompanyName/": StringFromXML(context, "CompanyName"); break;
+                        case "/connection/CustomerName/": StringFromXML(context, "CustomerName"); break;
+                    }
+
+                    Thread.Sleep(0);
+
+                }
+
+            }
+
+        }
+
+
+
+            public static void CreateListener(int port)
+        {
+
+            if (!HttpListener.IsSupported)
+            {
+                Console.WriteLine("Windows XP SP2 or Server 2003 is required to use the HttpListener class.");
+                return;
+            }
+
+
+            HttpListener listener = new HttpListener();
+            try
+            {
+                listener.Prefixes.Add("http://localhost:" + port + "/");
+                listener.Start();
+                Console.WriteLine("http://localhost:" + port + ": Ожидание подключений...");
+                Thread.Sleep(0);
+
+
+
+            //      HttpListenerRequest request = context.Request;
+            //      HttpListenerResponse response = context.Response;
+
+            while (true)
+            {
+                // метод GetContext блокирует текущий поток, ожидая получение запроса 
+                HttpListenerContext context = listener.GetContext();
+                ConnectionInfo(context.Request);
+
+                switch (Path(context.Request.RawUrl))
+                {
+                    default: StringFromXML(context, "CustomerID"); break;
+                    case "/connection/CompanyName/": StringFromXML(context, "CompanyName"); break;
+                    case "/connection/CustomerName/": StringFromXML(context, "CustomerName"); break;
+                }
+
+                Thread.Sleep(0);
+
+            }
+
+            }
+            catch (HttpListenerException e)
+            {
+                Console.WriteLine(port + "/ Подключение не создано");
+                Console.WriteLine(e.Message);
+            }
+
+            finally
+            {
+          //      listener.Stop();
+            }
+
+            //  Console.WriteLine("ThreadProc: {0}", i);
+            // Yield the rest of the time slice.
+
+            // останавливаем прослушивание подключений
+    /*        listener.Stop();
+            Console.WriteLine("Обработка подключений завершена");
+            Console.Read();*/
+        }
 
         public static void PrintKeysAndValues(NameValueCollection myCol)
         {
@@ -144,44 +250,47 @@ namespace HTTP_LISTENER
         output.Close();
         }
 
-            static void Main(string[] args)
+
+ 
+
+
+        static void Main(string[] args)
         {
 
-            if (!HttpListener.IsSupported)
+
+
+      //      Thread t = new Thread(new ThreadStart(ThreadProc));
+
+            ArrayList ThreadList = new ArrayList();
+
+      ///      Thread Thread1 = new Thread(ListenerObject.CreateListener));
+
+           /* List<string>[] list;
+            List<Thread> threads = new List<Thread>();*/
+
+
+            //    list = dbConnect.Select();
+
+            int size =  30;
+
+            for (int i = 0; i < size; i++)
             {
-                Console.WriteLine("Windows XP SP2 or Server 2003 is required to use the HttpListener class.");
-                return;
+                int port = 8000 + i;
+                Thread th = new Thread(() => {
+                    CreateListener(port);
+                    //calling callback function
+                });
+                th.Name = "Thread_" + i;
+                th.Start();
+                ThreadList.Add(th);
             }
 
+          /*  for (int i = 8000; i < 8000+size; i++)
+            {
+                ListenerObject ListenerObject = new ListenerObject();
+                ThreadList.Add(new Thread(ListenerObject.CreateListener));
 
-            HttpListener listener = new HttpListener();
-            listener.Prefixes.Add("http://localhost:8888/connection/");
-            listener.Start();
-            Console.WriteLine("Ожидание подключений...");
-
-      //      HttpListenerRequest request = context.Request;
-      //      HttpListenerResponse response = context.Response;
-
-            while (true)
-                    {
-                        // метод GetContext блокирует текущий поток, ожидая получение запроса 
-                        HttpListenerContext context = listener.GetContext();
-                        ConnectionInfo(context.Request);
-
-                      switch (Path(context.Request.RawUrl))
-                        {
-                            default: StringFromXML(context, "CustomerID"); break;
-                            case "/connection/CompanyName/": StringFromXML(context, "CompanyName"); break;
-                            case "/connection/CustomerName/": StringFromXML(context, "CustomerName"); break;
-                        }
-
-                    }
-                    // останавливаем прослушивание подключений
-                    listener.Stop();
-                    Console.WriteLine("Обработка подключений завершена");
-                    Console.Read();
+            }*/
         }
-
-
     }
 }
